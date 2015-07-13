@@ -1,7 +1,7 @@
 //SETTINGS FOR D3
 var width = document.body.clientWidth;
 // var height = window.innerHeight - document.querySelector('header').clientHeight - 40;
-var height = 500;
+var height = 400;
 var typeFace = 'Lato';
 var minFontSize = 22;
 var colors = d3.scale.category20b();
