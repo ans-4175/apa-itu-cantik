@@ -33,7 +33,7 @@ function pieChart(idtag, title, allData, genderData) {
       text: title
     },
     subtitle: {
-      text: 'Click the slices to view details'
+      text: 'Klik bagian, untuk informasi rinci'
     },
     plotOptions: {
       series: {
