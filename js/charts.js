@@ -1,4 +1,87 @@
-function pieChart(idtag, title, allData, genderData) {
+function pieLevelChart(idtag, title, allData, genderData) {
+  //inisiasi charts
+  var name = idtag
+  var mainData = []
+  var drillData = []
+  var dataColor = Highcharts.getOptions().colors
+  var i = 0
+  _.forEach(allData, function(v, k) {
+    //mainData
+    mainData.push({
+      name: k,
+      y: v,
+      color: dataColor[i]
+    })
+    //drillDown
+    _.forEach(genderData, function(val, key) {
+      var label = (key == 0) ? "Pria" : "Wanita"
+      var value = (typeof val[k] != "undefined") ? val[k] : 0
+      var details = {
+        name: label,
+        y: value,
+        color: Highcharts.Color(dataColor[i]).brighten(0.2).get()
+      }
+      drillData.push(details)
+    })
+    i++
+  })
+  //create charts
+  var chart = new Highcharts.Chart({
+    chart: {
+      type: 'pie',
+      renderTo: idtag
+    },
+    title: {
+      text: title
+    },
+    subtitle: {
+      text: 'Klik bagian, untuk informasi rinci'
+    },
+    plotOptions: {
+      series: {
+        dataLabels: {
+          enabled: true,
+          format: '{point.name}: {point.y}'
+        }
+      }
+    },
+    tooltip: {
+      headerFormat: '<span style="font-size:11px">{point.key}</span><br>',
+      pointFormat: '<span style="font-size:11px">{point.y}</span><br>',
+    },
+    series: [{
+      name: idtag,
+      data: mainData,
+      size: '60%',
+      dataLabels: {
+        formatter: function() {
+          return this.y > 5 ? this.point.name : null;
+        },
+        color: 'white',
+        distance: -30
+      }
+    }, {
+      name: 'Gender',
+      data: drillData,
+      size: '80%',
+      innerSize: '60%',
+      dataLabels: {
+        formatter: function() {
+          // display only if larger than 1
+          return this.y > 1 ? '<b>' + this.point.name + ':</b> ' + this.y + '%' : null;
+        }
+      }
+    }]
+  });
+  //return val
+  return {
+    draw: function() {
+      chart
+    }
+  }
+}
+
+function pieDrillChart(idtag, title, allData, genderData) {
   //inisiasi charts
   var name = idtag
   var mainData = []
