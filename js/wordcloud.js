@@ -4,6 +4,7 @@ var width = document.body.clientWidth;
 var height = 400;
 var typeFace = 'Lato';
 var minFontSize = 22;
+var dividerSize = 8;
 var colors = d3.scale.category20b();
 
 function wordCloud(idtag) {
@@ -44,7 +45,7 @@ function wordCloud(idtag) {
       })
       .font(typeFace)
       .fontSize(function(d) {
-        var fsize = ((d.size / 5) < 1) ? 1 : (d.size / 5)
+        var fsize = ((d.size / dividerSize) < 1) ? 1 : (d.size / dividerSize)
         return fsize * minFontSize;
       })
       .on('end', drawCloud)

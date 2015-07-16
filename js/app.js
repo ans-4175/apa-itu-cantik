@@ -1,5 +1,11 @@
 document.addEventListener("DOMContentLoaded", function(event) {
   //install wordcloud
+  var allCantik = wordCloud("allCantik")
+  var maleCantik = wordCloud("maleCantik")
+  var femaleCantik = wordCloud("femaleCantik")
+  allCantik.draw(data.apaitucantik_count_struct)
+  maleCantik.draw(data.apaitucantik_gender_count_struct[0])
+  femaleCantik.draw(data.apaitucantik_gender_count_struct[1])
   var allWords = wordCloud("allWords")
   var maleWords = wordCloud("maleWords")
   var femaleWords = wordCloud("femaleWords")

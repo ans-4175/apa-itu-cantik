@@ -34,9 +34,6 @@ function pieLevelChart(idtag, title, allData, genderData) {
     title: {
       text: title
     },
-    subtitle: {
-      text: 'Klik bagian, untuk informasi rinci'
-    },
     plotOptions: {
       series: {
         dataLabels: {
