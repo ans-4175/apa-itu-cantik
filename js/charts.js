@@ -142,3 +142,34 @@ function pieDrillChart(idtag, title, allData, genderData) {
     }
   }
 }
+
+function bubbleChart(idtag, title, allData) {
+  //create charts
+  console.log(idtag, title, allData)
+  var chart = new Highcharts.Chart({
+    chart: {
+      type: 'bubble',
+      zoomType: 'xy',
+      renderTo: idtag
+    },
+    title: {
+      text: title
+    },
+    xAxis: {
+        type: 'linear'
+    },
+    plotOptions: {
+        series: {
+            pointStart: 0,
+            pointInterval: 1
+        }
+    },
+    series: allData
+  });
+  //return val
+  return {
+    draw: function() {
+      chart
+    }
+  }
+}

@@ -18,6 +18,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var intperilaku_chart = pieLevelChart("intperilaku", "Lebih milih intelektual atau perilaku ?", data.intperilaku_count, data.intperilaku_gender_count)
   var fisikperilaku_chart = pieLevelChart("fisikperilaku", "Lebih milih fisik atau perilaku ?", data.fisikperilaku_count, data.fisikperilaku_gender_count)
   var cantikgak_chart = pieLevelChart("cantikgak", "Jika kamu wanita, merasa cantik ?", data.cantikgak_count, data.cantikgak_gender_count)
+  //
+  var cantikgak_bubble = bubbleChart("cantikgak_bubble", "Jika kamu cantik: ya atau tidak ?", data.cantikgak_bubble)
+  var cantikgak_bubble = bubbleChart("pandangangak_bubble", "Apakah cantik dari pandangan: ya atau tidak ?", data.pandangangak_bubble)
 
   // console.log("DOM fully loaded and parsed");
 });
