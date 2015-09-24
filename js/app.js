@@ -21,6 +21,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
   //
   var cantikgak_bubble = bubbleChart("cantikgak_bubble", "Jika kamu cantik: ya atau tidak ?", data.cantikgak_bubble)
   var cantikgak_bubble = bubbleChart("pandangangak_bubble", "Apakah cantik dari pandangan: ya atau tidak ?", data.pandangangak_bubble)
+  //
+  var fisikall_chart = pieLevelChart("fisikall", "Bila fisik yang utama ?", data.fisik_all_count, data.fisik_all_gender_count)
+  var perilakuall_chart = pieLevelChart("perilakuall", "Bila perilaku yang utama ?", data.perilaku_all_count, data.perilaku_all_gender_count)
+  var intelektualall_chart = pieLevelChart("intelektualall", "Bila intelektual yang utama ?", data.intelektual_all_count, data.intelektual_all_gender_count)
 
   // console.log("DOM fully loaded and parsed");
 });
