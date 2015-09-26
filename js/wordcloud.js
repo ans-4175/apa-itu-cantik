@@ -6,6 +6,11 @@ var typeFace = 'Lato';
 var minFontSize = 22;
 var dividerSize = 8;
 var colors = d3.scale.category20b();
+var widthCentrum = width / 2;
+if (width < 481) {
+  minFontSize = 12;
+  widthCentrum = width / 2.5;
+}
 
 function wordCloud(idtag) {
   //inisiasi svg
@@ -13,7 +18,7 @@ function wordCloud(idtag) {
     .attr('width', width)
     .attr('height', height)
     .append('g')
-    .attr('transform', 'translate(' + width / 2 + ', ' + height / 2 + ')');
+    .attr('transform', 'translate(' + (widthCentrum) + ', ' + (height / 2) + ')');
 
   function drawCloud(words) {
     var vis = svg.selectAll('text').data(words);
