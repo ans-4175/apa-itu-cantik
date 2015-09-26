@@ -145,7 +145,6 @@ function pieDrillChart(idtag, title, allData, genderData) {
 
 function bubbleChart(idtag, title, allData) {
   //create charts
-  console.log(idtag, title, allData)
   var chart = new Highcharts.Chart({
     chart: {
       type: 'bubble',

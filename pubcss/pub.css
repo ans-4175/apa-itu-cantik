@@ -417,9 +417,9 @@ header h2 {
   -webkit-column-break-inside: avoid;
   column-break-inside: avoid;
   break-inside: avoid;
-  -webkit-column-break-after: always;
-  column-break-after: always;
-  break-after: always;
+  -webkit-column-break-after: auto;
+  column-break-after: auto;
+  break-after: auto;
   text-align: center;
   font-size: 10pt;
 }
